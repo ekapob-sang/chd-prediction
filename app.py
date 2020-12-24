@@ -19,10 +19,10 @@ chd = pickle.load(open("E:\Practice deploy\practice1\logisticchd.pkl","rb"))
 
 @app.route("/")
 def home():
-   return render_template('/main.html')
+   return render_template('main.html')
 @app.route("/page")    
 def page():
-    return render_template('/main.html')
+    return render_template('main.html')
 
 @app.route("/predict", methods=["GET", "POST"])
 def result():
