@@ -15,7 +15,7 @@ from flask import render_template , request
 app = flask.Flask(__name__)
 
 # load model
-chd = pickle.load(open("E:\Practice deploy\practice1\logisticchd.pkl","rb"))
+chd = pickle.load(open(logisticchd.pkl","rb"))
 
 @app.route("/")
 def home():
