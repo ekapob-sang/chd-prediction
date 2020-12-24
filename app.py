@@ -95,7 +95,4 @@ def show():
 
 
 if __name__ == '__main__':
-    """Connect to Server"""
-    HOST = "127.0.0.1"
-    PORT = "4000"
-    app.run(HOST, PORT)
+    app.run(debug=True)
