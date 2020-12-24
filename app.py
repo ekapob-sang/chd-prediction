@@ -15,14 +15,14 @@ from flask import render_template , request
 app = flask.Flask(__name__)
 
 # load model
-chd = pickle.load(open(logisticchd.pkl","rb"))
+chd = pickle.load(open("logisticchd.pkl","rb"))
 
 @app.route("/")
 def home():
-   return render_template('main.html')
+   return render_template('/main.html')
 @app.route("/page")    
 def page():
-    return render_template('main.html')
+    return render_template('/main.html')
 
 @app.route("/predict", methods=["GET", "POST"])
 def result():
