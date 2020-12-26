@@ -20,10 +20,10 @@ scale = pickle.load(open("scaler.pkl","rb"))
 
 @app.route("/")
 def home():
-   return render_template('templates/main.html')
+   return render_template('/main.html')
 @app.route("/page")    
 def page():
-    return render_template('templates/main.html')
+    return render_template('/main.html')
 
 
 @app.route("/predict", methods=["GET", "POST"])
@@ -66,7 +66,7 @@ def result():
         diab = "ไม่เป็น"
     prob = chd.predict_proba(X_new2)
     prob_per = (round(prob[0][1],2)) * 100
-    return render_template('templates/result.html',gender=gender,age=age,cigs=cigs,sysbp=sysbp,diabp=diabp,diab=diab,prob_per=prob_per)
+    return render_template('/result.html',gender=gender,age=age,cigs=cigs,sysbp=sysbp,diabp=diabp,diab=diab,prob_per=prob_per)
     # results = """
     #           <body>
     #           <h3> Coronary Heart Disease prediction <h3>
@@ -105,7 +105,7 @@ def result():
 def show():
     if request.method == 'POST':
       result = request.form
-      return render_template('templates/result.html',result=result)
+      return render_template('/result.html',result=result)
 
 
 
