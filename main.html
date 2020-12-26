@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHD prediction</title>
+  </head>
+  <body>
+    <h2>--------------------------------------------------------------------------------</h2>
+    <h2><span style="color: #0000ff;">Prediction your chance of Coronary Heart Disease in 10 years.. (V2)</span></p>
+    <p><span style="color: #000000;">-------------------------------------------------------------------------------</span></p>
+    <img src="atherosclerosis.jpg" alt="atherosclerosis" width="200"height="200">
+    <h3><span style="color: #0000ff;">ข้อมูลของคุณ</span></p></h3>
+    <h4>
+      <form action="/predict" method="post">
+       <p>1. เพศ
+         <input type="radio" name="sex" value="male"> ชาย
+         <input type="radio" name="sex" value="female"> หญิง </p>
+       <p>2. อายุ &nbsp;
+         <input type="text" name="age" required="required" /> &nbsp; ปี</p>
+       <p>3. จำนวนบุหรี่ที่สูบต่อวัน&nbsp; 
+        <input type="text" name="cig" required="required" /> &nbsp; มวน</p>
+       <p>4. ความดันโลหิตตัวบน( Systolic BP)&nbsp; 
+        <input type="text" name="sysbp" required="required" /> &nbsp; mmHg</p>
+       <p>5. ความดันโลหิตตัวล่าง( Diastolic BP)&nbsp; 
+        <input type="text" name="diabp" required="required" /> &nbsp; mmHg</p>
+       <p>6. คุณเป็นเบาหวานหรือไม่                                        
+         <input type="radio" name="dm" value="nodm"> ไม่เป็น
+         <input type="radio" name="dm" value="dm"> เป็น  </p>
+       <button type="submit" class="btn btn-primary btn-block btn-large">ส่งข้อมูล</button>
+      </form>
+    </h4>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>Remark : Use logistic regression model from framingham dataset which gives 80% accuracy</p>
+    <p>Production : Dec 2020</p>
+  </body>
+</html>
