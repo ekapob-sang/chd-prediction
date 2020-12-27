@@ -12,7 +12,7 @@ from flask import render_template , request
 
 
 # app
-app = flask.Flask(__name__)
+app = flask.Flask(__name__,static_url_path='/static')
 
 # load model
 chd = pickle.load(open("logisticchd2.pkl","rb"))
