@@ -51,12 +51,6 @@ def result():
     X_cat = np.array(fmap[male]+fmap[dm]).reshape(1, -1)
     X_new = np.concatenate((X_rawscale,X_cat),axis=None)
     X_new2=X_new.reshape(1, -1)
-    age = 20
-    cigs = 0
-    sysbp = 120
-    diabp = 80
-    male = "male"
-    dm = "dm" 
     a = np.array([int(age)] + [int(cigs)] + [int(sysbp)] + [int(diabp)]).reshape(1, -1)
     b = np.array([str(show[male]),str(show[dm])]).reshape(1, -1)
     c = np.concatenate((a,b),axis=None)
@@ -66,7 +60,7 @@ def result():
     data=dict(zip(item,value))
     prob = chd.predict_proba(X_new2)
     prob_per = (round(prob[0][1],2)) * 100
-    return render_template('/result2.html',data=data,prob_per=prob_per)
+    return render_template('/result.html',data=data,prob_per=prob_per)
     
     
 
@@ -75,12 +69,9 @@ def result():
 def show():
     if request.method == 'POST':
       result = request.form
-      return render_template('/result2.html',result=result)
+      return render_template('/result.html',result=result)
 
 
 
 if __name__ == '__main__':
-    """Connect to Server"""
-    HOST = "127.0.0.1"
-    PORT = "4000"
     app.run(HOST, PORT)
