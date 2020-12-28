@@ -16,8 +16,8 @@ from flask import render_template , request
 app = flask.Flask(__name__, static_url_path='/static')
 
 # load model
-chd = pickle.load(open("E:\Practice deploy\practice1\logisticchd2.pkl","rb"))
-scale = pickle.load(open("E:\Practice deploy\practice1\scaler.pkl","rb"))
+chd = pickle.load(open("logisticchd2.pkl","rb"))
+scale = pickle.load(open("scaler.pkl","rb"))
 
 @app.route("/")
 def home():
